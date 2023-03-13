@@ -181,9 +181,6 @@ const Crud = () => {
     const leftToolbarTemplate = () => {
         return (
             <React.Fragment>
-                <div className="my-2">
-                <label>REPORTE</label>
-                </div>
                 {/*<div className="my-2">
                     <Button label="New" icon="pi pi-plus" className="p-button-success mr-2" onClick={openNew} />
                     <Button label="Delete" icon="pi pi-trash" className="p-button-danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
@@ -313,7 +310,6 @@ const Crud = () => {
                         header={header}
                         responsiveLayout="scroll"
                     >
-                        <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="id" header="ID" sortable body={codeBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="fechareg" header="Fecha De Registro" sortable body={dateRegBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="fechaalt" header="Fecha De Alta" sortable body={dateAltBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>

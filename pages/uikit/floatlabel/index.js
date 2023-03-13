@@ -45,8 +45,8 @@ const Crud = () => {
             [
                 {
                     id: 1,
-                    nombreus: "hola@gmial.com",
-                    name: "david",
+                    nombreus: "hola@gmail.com",
+                    name: "David",
                     apellido: "Moreno",
                     dni: "72882822",
                     celular: "966625312"
@@ -81,7 +81,7 @@ const Crud = () => {
     const saveProduct = () => {
         setSubmitted(true);
 
-        if (product.name.trim()) {
+        if (product.nombreus.trim()) {
             let _products = [...products];
             let _product = { ...product };
             if (product.id) {
@@ -312,10 +312,9 @@ const Crud = () => {
                         header={header}
                         responsiveLayout="scroll"
                     >
-                        <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="id" header="ID" sortable body={codeBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="nombreus" header="Nombre de Usuario" sortable body={nameUsBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
-                        <Column field="nombre" header="Nombre" sortable body={nameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
+                        <Column field="name" header="Nombre" sortable body={nameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="apellido" header="Apellido" sortable body={surnameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="dni" header="DNI" sortable body={dniBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="celular" header="Celular" sortable body={phoneBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
@@ -330,12 +329,12 @@ const Crud = () => {
                             {submitted && !product.nombreus && <small className="p-invalid">Nombre de Usuario Requerido.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="nombre">Nombres</label>
-                            <InputText id="nombre" value={product.nanombreme} onChange={(e) => onInputChange(e, 'nombre')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.nombre })} />
-                            {submitted && !product.nombre && <small className="p-invalid">El Nombre es Requerido.</small>}
+                            <label htmlFor="name">Nombres</label>
+                            <InputText id="name" value={product.nanombreme} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
+                            {submitted && !product.name && <small className="p-invalid">El Nombre es Requerido.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="apellido">Apellido</label>
+                            <label htmlFor="apellido">Apellidos</label>
                             <InputText id="apellido" value={product.apellido} onChange={(e) => onInputChange(e, 'apellido')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.apellido })} />
                             {submitted && !product.apellido && <small className="p-invalid">El apellido es requerido.</small>}
                         </div>

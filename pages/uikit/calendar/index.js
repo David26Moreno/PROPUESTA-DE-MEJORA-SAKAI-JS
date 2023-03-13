@@ -45,8 +45,8 @@ const Crud = () => {
         setProducts([
             {
                 id: 1,
-                fecha: "10/03/2023",
                 usuario: "David",
+                fecha: "10/03/2023",
                 especialista: "Alex",
                 consultorio:"General"
             }
@@ -79,7 +79,7 @@ const Crud = () => {
     const saveProduct = () => {
         setSubmitted(true);
 
-        if (product.name.trim()) {
+        if (product.usuario.trim()) {
             let _products = [...products];
             let _product = { ...product };
             if (product.id) {
@@ -303,7 +303,6 @@ const Crud = () => {
                         header={header}
                         responsiveLayout="scroll"
                     >
-                        <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="fecha" header="Fecha De Registro" sortable body={dateBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="usuario" header="Usuario" sortable body={userBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="especialista" header="Especialista" sortable body={especialistaBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
@@ -313,24 +312,24 @@ const Crud = () => {
                     <Dialog visible={productDialog} style={{ width: '450px' }} header="REGISTRAR CITA" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                         {product.image && <img src={`${contextPath}/demo/images/product/${product.image}`} alt={product.image} width="150" className="mt-0 mx-auto mb-5 block shadow-2" />}
                         <div className="field">
-                            <label htmlFor="name">FECHA DE REGISTRO</label>
-                            <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
-                            {submitted && !product.name && <small className="p-invalid">Name is required.</small>}
+                            <label htmlFor="fecha">FECHA DE REGISTRO</label>
+                            <InputText id="fecha" value={product.fecha} onChange={(e) => onInputChange(e, 'fecha')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.fecha })} />
+                            {submitted && !product.fecha && <small className="p-invalid">fecha is required.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="description">USUARIO</label>
-                            <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
-                            {submitted && !product.name && <small className="p-invalid">Name is required.</small>}
+                            <label htmlFor="usuario">USUARIO</label>
+                            <InputText id="usuario" value={product.usuario} onChange={(e) => onInputChange(e, 'usuario')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.usuario })} />
+                            {submitted && !product.usuario && <small className="p-invalid">usuario is required.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="description">ESPECIALISTA</label>
-                            <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
-                            {submitted && !product.name && <small className="p-invalid">Name is required.</small>}
+                            <label htmlFor="especialista">ESPECIALISTA</label>
+                            <InputText id="especialista" value={product.especialista} onChange={(e) => onInputChange(e, 'especialista')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.especialista })} />
+                            {submitted && !product.especialista && <small className="p-invalid">especialista is required.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="description">CONSULTORIO</label>
-                            <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
-                            {submitted && !product.name && <small className="p-invalid">Name is required.</small>}
+                            <label htmlFor="consultorio">CONSULTORIO</label>
+                            <InputText id="consultorio" value={product.consultorio} onChange={(e) => onInputChange(e, 'consultorio')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.consultorio })} />
+                            {submitted && !product.consultorio && <small className="p-invalid">consultorio is required.</small>}
                         </div>
                     </Dialog>
                 </div>

@@ -45,8 +45,8 @@ const Crud = () => {
             [
                 {
                     id: 1,
-                    name: "david",
-                    descripcion: "hola"
+                    name: "David",
+                    descripcion: "Mensaje de Prueba"
                 }
             ]
         )
@@ -281,7 +281,6 @@ const Crud = () => {
                         header={header}
                         responsiveLayout="scroll"
                     >
-                        <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
                         <Column field="id" header="ID" sortable body={codeBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="nombre" header="Nombre" sortable body={nameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
                         <Column field="descripcion" header="Descripcion" body={priceBodyTemplate} sortable></Column>
@@ -296,8 +295,9 @@ const Crud = () => {
                             {submitted && !product.name && <small className="p-invalid">Name is required.</small>}
                         </div>
                         <div className="field">
-                            <label htmlFor="description">Descripcion</label>
-                            <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
+                            <label htmlFor="descripcion">Descripcion</label>
+                            <InputText id="descripcion" value={product.descripcion} onChange={(e) => onInputChange(e, 'descripcion')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.descripcion })} />
+                            {submitted && !product.descripcion && <small className="p-invalid">Description is required.</small>}
                         </div>
                     </Dialog>
 
